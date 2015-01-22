@@ -1,0 +1,22 @@
+
+Reading questions:
+
+Study design: what's the difference between:
+
+	1) Observational vs. experimental
+An observational study is one where the researchers observe a particular group, and have no control over the placement of participants in the test group or control group (i.e. the researcher does not control the independent variable being studied). In experimental studies, the researchers control the independent variable. They decide which participants will be in the control and test groups, treat participants in the control and test groups differently, and compare the results.
+
+	2) Cross-sectional vs. longitudinal
+Cross-sectional studies represent a short-period of time -- they are a "cross-section" of the population at the time of the study. Longitudinal studies are conducted over a much longer period of time, and observe the same population repeatedly.
+
+	3) Representative vs. oversampled
+Representative studies contain a sample population that is representative of the overall population -- subgroups within the sample population are present at the same ratios as in the overall population. Oversampled populations have higher ratios of minority subgroups to ensure that each minority subgroup has a sufficient sample size to draw meaningful results. 
+
+	4) Raw data vs. recodes
+Raw data is the data being directly collected during the study. Recodes are "sanity-checks" for the data -- they are calculated using the raw data to make sure that the data is both accurate and consistent.
+
+5) What's an example of something you might do during data cleaning?
+During data cleaning, you might check for special values within your data and handle them appropriately (such as in the example of the special codes for baby weight within the NSFG pregnancy dataset described in the chapter).
+
+6) What's an example of something you might do during data validation?
+During data validation, you might remove clearly erroneous data (such as in the example of the 51-pound baby within the NSFG pregnancy dataset described in the chapter). 
