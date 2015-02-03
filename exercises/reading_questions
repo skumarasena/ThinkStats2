@@ -1,0 +1,34 @@
+Reading Questions:
+
+1. How would you describe these distributions? (see book)
+
+	(a) Birthweight (lbs portion): 
+central tendency: One central cluster at 7 lbs. Normal distribution.
+spread: Range 1-12 lbs, standard deviation ~2lbs maybe?
+tails: Slow drop-off from central cluster. Tail at lower bound is longer -- skewed left.
+outliers: No outliers.
+
+	(b) Birthweight (oz portion):
+central tendency: None. The distribution is relatively flat. Uniform distribution.
+spread: Range 0-15 oz. 
+tails: No tails, although there is a bit of a tendency to have more 0-oz babies. Probably because it's easy to round up/down to whole-pound numbers.
+outliers: No outliers.
+
+	(c) Age at end of pregnancy (years):
+central tendency: Around 21 years. 
+spread: Range 14 - 42 years. Skewed right, probably because you can have children at older ages rather than younger.
+tails: Tail to the right.
+outliers: No outliers.
+
+
+	(d) Pregnancy length (weeks)
+central tendency: Around 40 weeks. Very high at center, drops off quickly. "leptopertotic"
+spread: Skewed left. There are a few "bumps" at around 30 weeks.
+tails: Tail to the left.
+outliers: No outliers.
+
+
+Exercise: What's up with the bumps in the distribution of prglngth? 
+
+1) Print the value_counts for this variable and see if you can identify a pattern.
+2) Find the documentation of this variable, and generate possible explanations. 
