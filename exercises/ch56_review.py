@@ -52,3 +52,30 @@ df = nsfg.ReadFemPreg()
 
 	#xs, ys = thinkstats2.NormalProbability(sample)	
 	#thinkplot.Plot(xs, ys, label='label')
+
+#############CHAPTER 6#############
+#MOMENTS
+#def RawMoment(xs, k):								#computes kth raw moment of xs
+	#return sum(x**k for x in xs)/len(xs)			#1st moment is mean
+
+#def CentralMoment(xs, k):							#computes kth central moment of xs
+	#mean = RawMoment(xs, 1)						#2nd central moment is variance
+	#return sum((x-mean)**k for x in xs)/len(xs)
+
+#def StandardizedMoment(xs, k):						#computes kth standardized moment of xs
+	#var = CentralMoment(xs, 2)
+	#std = math.sqrt(var)
+	#return CentralMoment(xs, k)/std**k
+
+
+#SKEWNESS
+#def skewness(xs):									#3rd standardized moment is skewness
+	#return StandardizedMoment(xs, 3)
+
+#def PearsonMedianSkewness(xs):						#computes Pearson's Median Skewness
+	#median = xs.Median()		#or can use Allen's Median(xs)
+	#mean = RawMoment(xs, 1)
+	#var = CentralMoment(xs, 2)
+	#std = math.sqrt(var)
+	#gp = 3*(mean-median)/std
+	#return gp

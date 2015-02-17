@@ -49,12 +49,19 @@ def InterpolateSample(df, log_upper=6.0):
 
 def main():
     df = hinc.ReadData()
+    print(df)
     log_sample = InterpolateSample(df, log_upper=6.0)
+    print(log_sample)
 
     log_cdf = thinkstats2.Cdf(log_sample)
     thinkplot.Cdf(log_cdf)
-    thinkplot.Show(xlabel='household income',
-                   ylabel='CDF')
+    #thinkplot.Show(xlabel='household income',ylabel='CDF')
+
+    print("Mean: " + str(log_sample.mean()))
+    print("Median: " + str(log_cdf.Percentile(50)))
+
+    print("Pearson's Skewness: " + str(3*(log_sample.mean() - log_cdf.Percentile(50))/np.std(log_sample)))
+
 
 
 if __name__ == "__main__":

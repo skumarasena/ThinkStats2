@@ -1496,14 +1496,6 @@ class Pdf(object):
     def Render(self, **options):
         """Generates a sequence of points suitable for plotting.
 
-        If options includes low and high, it must also include n;
-        in that case the density is evaluated an n locations between
-        low and high, including both.
-
-        If options includes xs, the density is evaluate at those location.
-
-        Otherwise, self.GetLinspace is invoked to provide the locations.
-
         Returns:
             tuple of (xs, densities)
         """
@@ -2168,12 +2160,12 @@ def Jitter(values, jitter=0.5):
     return np.random.uniform(-jitter, +jitter, n) + values
 
 
-def NormalProbabilityPlot(sample, fit_color='0.8', **options):
+def NormalProbabilityPlot(sample, label=None, fit_color='0.8'):
     """Makes a normal probability plot with a fitted line.
 
     sample: sequence of numbers
+    label: string label for the data
     fit_color: color string for the fitted line
-    options: passed along to Plot
     """
     xs, ys = NormalProbability(sample)
     mean, var = MeanVar(sample)
@@ -2183,7 +2175,7 @@ def NormalProbabilityPlot(sample, fit_color='0.8', **options):
     thinkplot.Plot(*fit, color=fit_color, label='model')
 
     xs, ys = NormalProbability(sample)
-    thinkplot.Plot(xs, ys, **options)
+    thinkplot.Plot(xs, ys, label=label)
 
  
 def Mean(xs):
@@ -2697,16 +2689,12 @@ def PercentileRow(array, p):
 
 
 def PercentileRows(ys_seq, percents):
-    """Given a collection of lines, selects percentiles along vertical axis.
+    """Selects rows from a sequence that map to percentiles.
 
-    For example, if ys_seq contains simulation results like ys as a
-    function of time, and percents contains (5, 95), the result would
-    be a 90% CI for each vertical slice of the simulation results.
-
-    ys_seq: sequence of lines (y values)
+    ys_seq: sequence of unsorted rows
     percents: list of percentiles (0-100) to select
 
-    returns: list of NumPy arrays, one for each percentile
+    returns: list of NumPy arrays
     """
     nrows = len(ys_seq)
     ncols = len(ys_seq[0])
